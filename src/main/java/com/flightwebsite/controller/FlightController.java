@@ -5,7 +5,7 @@ import com.flightwebsite.repository.FlightRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/flights")
 public class FlightController {
