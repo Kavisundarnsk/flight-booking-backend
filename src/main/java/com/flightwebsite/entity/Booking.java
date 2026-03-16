@@ -7,20 +7,19 @@ public class Booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String passenger_name;
     private String seat_no;
     private int flight_id;
 
-    public Booking() {
-    }
+    public Booking() {}
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -47,6 +46,4 @@ public class Booking {
     public void setFlight_id(int flight_id) {
         this.flight_id = flight_id;
     }
-
-
 }

@@ -27,7 +27,7 @@ public class BookingController {
     }
 
     @DeleteMapping("/cancel/{id}")
-    public String cancelBooking(@PathVariable int id){
+    public String cancelBooking(@PathVariable long id){
         repo.deleteById(id);
         return "Booking Cancelled";
     }
