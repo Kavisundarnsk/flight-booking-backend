@@ -2,15 +2,14 @@ package com.flightwebsite.controller;
 
 import com.flightwebsite.entity.Booking;
 import com.flightwebsite.repository.BookingRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;   // 👈 THIS LINE ADD PANNU
+import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/bookings")
+@CrossOrigin(origins="*")
 public class BookingController {
 
     @Autowired
@@ -29,6 +28,6 @@ public class BookingController {
     @DeleteMapping("/cancel/{id}")
     public String cancelBooking(@PathVariable long id){
         repo.deleteById(id);
-        return "Booking Cancelled";
+        return "Booking cancelled";
     }
 }
