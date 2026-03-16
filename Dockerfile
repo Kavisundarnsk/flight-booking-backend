@@ -1,11 +1,11 @@
-FROM maven:3.9.9-eclipse-temurin-17
+FROM eclipse-temurin:21-jdk
 
 WORKDIR /app
 
 COPY . .
 
-RUN mvn clean package -DskipTests
+RUN apt-get update && apt-get install -y maven
 
-EXPOSE 8080
+RUN mvn clean package -DskipTests
 
 CMD ["java","-jar","target/*.jar"]
